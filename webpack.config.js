@@ -10,7 +10,7 @@ module.exports = {
     entry: {
         app: './modules/app/index.ts',
         app2: './modules/app2/index.ts',
-        common: ['angular']
+        common: ['angular', 'bootstrap-sass']
     },
     output: {
         filename: '[name]/app.js',
@@ -24,10 +24,16 @@ module.exports = {
         loaders: [
             {
                 test: /\.ts$/,
-                loader: 'babel-loader!ts-loader'
+                loaders: ['babel', 'ts']
             }, {
                 test: /\.html$/,
                 loader: 'raw'
+            }, {
+                test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+                loader: 'file'
+            }, {
+                test: /\.scss$/,
+                loaders: ['style', 'css', 'sass']
             }
         ]
     },
