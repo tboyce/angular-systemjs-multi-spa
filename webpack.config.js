@@ -10,10 +10,11 @@ module.exports = {
     entry: {
         app: './modules/app/index.ts',
         app2: './modules/app2/index.ts',
-        common: ['angular', 'bootstrap-sass']
+        bootstrap: path.join('../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss'),
+        common: ['angular']
     },
     output: {
-        filename: '[name]/app.js',
+        filename: '[name]/bundle.js',
         path: 'dist'
     },
     resolve: {
@@ -46,14 +47,14 @@ module.exports = {
             inject: 'body',
             hash: true,
             filename: 'app/index.html',
-            chunks: ['common', 'app']
+            chunks: ['bootstrap', 'common', 'app']
         }),
         new HtmlWebpackPlugin({
             template: './src/modules/app2/index.html',
             inject: 'body',
             hash: true,
             filename: 'app2/index.html',
-            chunks: ['common', 'app2']
+            chunks: ['bootstrap', 'common', 'app2']
         }),
         new ngAnnotatePlugin({
             add: true
