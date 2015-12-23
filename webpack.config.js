@@ -13,7 +13,7 @@ module.exports = {
         common: ['angular']
     },
     output: {
-        filename: '[name]/build.js',
+        filename: '[name]/app.js',
         path: 'dist'
     },
     resolve: {
