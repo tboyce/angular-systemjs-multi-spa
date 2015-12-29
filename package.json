@@ -3,6 +3,9 @@
     "directories": {
       "baseURL": "app"
     },
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.8"
+    },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
       "babel-runtime": "npm:babel-runtime@^5.8.24",
@@ -10,12 +13,15 @@
     }
   },
   "scripts": {
+    "postinstall": "node node_modules/bower/bin/bower install && jspm install",
     "clean": "rimraf app/*-bundle.*",
-    "start": "http-server app -c-1 -o",
-    "bundle": "jspm bundle new-auto/app - shared/* app/new-auto-bundle.js --inject && jspm bundle change-auto/app - shared/* app/change-auto-bundle.js --inject && jspm bundle shared/* app/shared-bundle.js",
+    "start": "npm run postinstall && http-server app -c-1 -o",
+    "bundle": "jspm bundle new-auto/index - shared/index app/new-auto-bundle.js --inject && jspm bundle change-auto/index - shared/index app/change-auto-bundle.js --inject && jspm bundle shared/index app/shared-bundle.js",
     "unbundle": "jspm unbundle && npm run clean"
   },
   "devDependencies": {
+    "bower": "^1.7.1",
+    "jspm": "^0.16.19",
     "rimraf": "^2.5.0"
   }
 }

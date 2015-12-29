@@ -6,7 +6,7 @@
     "Tim Boyce <timothy.boyce@mmgins.com>"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/tboyce/angular-webpack-multi-spa",
+  "homepage": "https://github.com/tboyce/angular-systemjs-multi-spa",
   "moduleType": [
     "es6"
   ],
