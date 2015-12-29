@@ -1,32 +1,21 @@
 {
-  "name": "tboyce-angular-webpack",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "jspm": {
+    "directories": {
+      "baseURL": "app"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  },
   "scripts": {
-    "start": "tsd install && npm install && webpack-dev-server"
+    "clean": "rimraf app/*-bundle.*",
+    "start": "http-server app -c-1 -o",
+    "bundle": "jspm bundle new-auto/app - shared/* app/new-auto-bundle.js --inject && jspm bundle change-auto/app - shared/* app/change-auto-bundle.js --inject && jspm bundle shared/* app/shared-bundle.js",
+    "unbundle": "jspm unbundle && npm run clean"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "babel": "5.8.23",
-    "babel-core": "5.8.25",
-    "babel-loader": "5.3.2",
-    "css-loader": "^0.23.1",
-    "file-loader": "^0.8.5",
-    "html-webpack-plugin": "1.6.1",
-    "ng-annotate-webpack-plugin": "0.1.2",
-    "node-sass": "^3.4.2",
-    "raw-loader": "0.5.1",
-    "sass-loader": "^3.1.2",
-    "style-loader": "^0.13.0",
-    "ts-loader": "0.7.2",
-    "typescript": "1.6.2",
-    "webpack": "^1.12.6",
-    "webpack-dev-server": "1.10.1"
-  },
-  "dependencies": {
-    "angular": "^1.4.8",
-    "bootstrap-sass": "^3.3.6"
+    "rimraf": "^2.5.0"
   }
 }

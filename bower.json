@@ -1,0 +1,23 @@
+{
+  "name": "angular-systemjs-multi-spa",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Tim Boyce <timothy.boyce@mmgins.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/tboyce/angular-webpack-multi-spa",
+  "moduleType": [
+    "es6"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "system.js": "~0.19.9"
+  }
+}
