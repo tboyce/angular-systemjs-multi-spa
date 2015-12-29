@@ -15,7 +15,7 @@
   "scripts": {
     "postinstall": "node node_modules/bower/bin/bower install && jspm install",
     "clean": "rimraf app/*-bundle.*",
-    "start": "npm run postinstall && http-server app -c-1 -o",
+    "start": "npm install && http-server app -c-1 -o",
     "bundle": "jspm bundle new-auto/index - shared/index app/new-auto-bundle.js --inject && jspm bundle change-auto/index - shared/index app/change-auto-bundle.js --inject && jspm bundle shared/index app/shared-bundle.js",
     "unbundle": "jspm unbundle && npm run clean"
   },
